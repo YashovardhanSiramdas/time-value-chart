@@ -1,11 +1,10 @@
 ## Time-Value Chart
 
-
-```
-
 Development mode:
 
-Clone the repository to local machine and execute the follow commands
+Clone the repository to local machine and execute the follow commands:-
+
+```
 
 ```shell
 git checkout dev
