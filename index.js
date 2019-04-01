@@ -16,12 +16,6 @@ const testSchema = new mongoose.Schema({
 	value: Number
 });
 
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
 const newRecordModel = mongoose.model("newRecordModel", testSchema);
 app.post('/insertData', (req, res) => {
 	let {body} = req;

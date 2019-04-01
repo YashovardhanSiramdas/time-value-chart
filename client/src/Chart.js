@@ -29,7 +29,6 @@ class Chart extends Component {
 		fetch('/getData')
 		.then(res => res.json())
 		.then(resJson => {
-			console.log(resJson);
 			let newData = resJson.map(val => {
 				return {timeStamp: d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")(val.timeStamp), value: val.value};
 			})
