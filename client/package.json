@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8081",
   "dependencies": {
     "d3": "^5.9.2",
     "react": "^16.8.6",

@@ -26,7 +26,7 @@ class Chart extends Component {
 	}
 
 	getData() {
-		fetch('http://localhost:8081/getData')
+		fetch('/getData')
 		.then(res => res.json())
 		.then(resJson => {
 			console.log(resJson);
