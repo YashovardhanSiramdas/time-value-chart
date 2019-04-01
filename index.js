@@ -46,6 +46,7 @@ app.get('/getData', (req, res) => {
 		if (err) {
 	      return res.send("Error: Server error");
 	    }
+	    console.log(doc);
 	    return res.send(doc);
 	})
 })
