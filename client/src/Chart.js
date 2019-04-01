@@ -31,11 +31,11 @@ class Chart extends Component {
 		.then(resJson => {
 			console.log(resJson);
 			let newData = resJson.map(val => {
-				return {timeStamp: d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")(val.timeStamp), price: val.price};
+				return {timeStamp: d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")(val.timeStamp), value: val.value};
 			})
 			console.log(newData);
 			this.x.domain(d3.extent(newData, val => val.timeStamp));
-			this.y.domain([0, d3.max(newData, val => val.price)]);
+			this.y.domain([0, d3.max(newData, val => val.value)]);
 			this.setState({
 				data: newData
 			});
@@ -61,7 +61,7 @@ class Chart extends Component {
 	get line(){
 		return d3.line()
 		  .x((d)=> (this.x(d.timeStamp)))
-		  .y((d)=> (this.y(d.price)));
+		  .y((d)=> (this.y(d.value)));
 	}
 
 	path(){
