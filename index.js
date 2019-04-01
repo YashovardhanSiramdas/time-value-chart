@@ -1,6 +1,7 @@
 const express = require('express');
 var cors = require('cors')
 const app = express();
+const path = path();
 const bodyParser = require('body-parser');
 const moment = require('moment');
 const port = process.env.PORT || 8081;
@@ -13,6 +14,12 @@ mongoose.connect("mongodb://yash:qwerty123@ds149365.mlab.com:49365/switchon_assi
 const testSchema = new mongoose.Schema({
 	timeStamp: Date,
 	price: Number
+});
+// the __dirname is the current directory from where the script is running
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 const newRecordModel = mongoose.model("newRecordModel", testSchema);
