@@ -1,7 +1,7 @@
 const express = require('express');
 var cors = require('cors')
 const app = express();
-const path = path();
+var path = require('path')
 const bodyParser = require('body-parser');
 const moment = require('moment');
 const port = process.env.PORT || 8081;
