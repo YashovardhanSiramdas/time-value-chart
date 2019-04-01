@@ -14,9 +14,9 @@
   "scripts": {
       "client-install": "npm install --prefix client",
 
-      "start": "node server.js",
+      "start": "node index.js",
 
-      "server": "nodemon server.js",
+      "server": "nodemon index.js",
 
       "client": "npm start --prefix client",
 
