@@ -8,7 +8,7 @@ const port = process.env.PORT || 8081;
 app.use(bodyParser.json());
 app.use(cors());
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://yash:qwerty123@ds149365.mlab.com:49365/switchon_assignment");
+mongoose.connect("mongodb://test123:test123@ds149365.mlab.com:49365/switchon_assignment");
 
 
 const testSchema = new mongoose.Schema({
